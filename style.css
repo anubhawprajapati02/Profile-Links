@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(240 11 11 / 61%), rgb(34 136 180));
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+}
+
+.left {
+    /* border: 2px solid black; */
+    height: 80vh;
+    width: 40%;
+    margin: 10vh 3vw;
+    text-align: center;
+    /* overflow: auto; */
+}
+
+.left h1 {
+    font-size: 100px;
+    margin-bottom: 15vh;
+}
+
+.left span {
+    font-size: 60px;
+    text-shadow: -2px 3px 4px #F06292; /* x-offset, y-offset, blur-radius, color */
+}
+
+@media only screen and (max-width: 716px) {
+    .left h1 {
+        font-size: 10vw;
+        margin-top: 10vh;
+    }
+
+    .left span {
+        font-size: 10vw;
+        margin-top: 25vh;
+        display: block;
+    }
+}
+
+.right {
+    /* border: 2px solid rgb(47, 37, 47); */
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    animation: ani1 3s ease-in-out 0s infinite;
+    box-shadow: 0px 0px 50px 0px #d84869;
+    width: 50%;
+    margin: 10vh auto;
+}
+
+@keyframes ani1 {
+    0% {
+        transform: translateX(-2%);
+    }
+
+    50% {
+        transform: translateX(1%) scale(1.05);
+    }
+
+    100% {
+        transform: translateX(-2%);
+    }
+}
+
+.link {
+    position: relative; /* Make the link relative for absolute positioning of the popup */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(219 152 152);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 0 4vw;
+    transition: transform 0.3s ease-out;
+}
+
+.link a {
+    color: inherit;
+}
+
+.link i {
+    transform: scale(2);
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.link img {
+    max-width: 35px;
+    cursor: pointer;
+}
+
+/* Change image on hover */
+.link:hover {
+    transform: scale(1.5);
+    transition: transform .3s ease-out;
+    border-color: white;
+}
+
+.link:nth-child(1) a:hover i {
+    color: white;
+    background-color: blue;
+
+}
+
+.link:nth-child(2) img:hover {
+    content: url('Icons/leetcode (2).svg');
+}
+
+.link:nth-child(3) a:hover img {
+    content: url('Icons/icons8-geeksforgeeks.svg');
+}
+
+.link:nth-child(4) a:hover img {
+    content: url('Icons/code-forces (1).svg');
+}
+
+.link:nth-child(5) a:hover img {
+    content: url('Icons/cc1.svg');
+    width: 35px;
+}
+
+.link:nth-child(6) a:hover i {
+    color: rgb(226, 30, 148);
+}
+
+.link:nth-child(7) i:hover {
+    color: rgb(21, 188, 43);
+}
+
+.popup {
+    display: none;
+    position: absolute; /* Ensure the popup is positioned absolutely */
+    top: 50%; /* Position it just below the icon or div */
+    transform: translateX(-50%);
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    white-space: nowrap;
+    box-shadow: -20px 19px 8px rgba(0, 0, 0, 0.2);/* Add shadow for visual clarity */
+}
+
+.show {
+    display: block;
+}
