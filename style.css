@@ -10,6 +10,14 @@ body {
 
 .container {
     display: flex;
+    height: 100vh;
+}
+
+.header {
+    display: none;
+    font-size: 150%;
+    margin-top: 10vh;
+    text-shadow: -2px 3px 4px #F06292;
 }
 
 .left {
@@ -28,19 +36,27 @@ body {
 
 .left span {
     font-size: 60px;
-    text-shadow: -2px 3px 4px #F06292; /* x-offset, y-offset, blur-radius, color */
+    text-shadow: -2px 3px 4px #F06292;
+    /* x-offset, y-offset, blur-radius, color */
 }
 
 @media only screen and (max-width: 716px) {
-    .left h1 {
-        font-size: 10vw;
-        margin-top: 10vh;
+    .left {
+        display: none;
     }
 
-    .left span {
-        font-size: 10vw;
-        margin-top: 25vh;
+    .header {
         display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .right {
+        height: 100vh;
     }
 }
 
@@ -72,7 +88,8 @@ body {
 }
 
 .link {
-    position: relative; /* Make the link relative for absolute positioning of the popup */
+    position: relative;
+    /* Make the link relative for absolute positioning of the popup */
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(219 152 152);
@@ -142,8 +159,10 @@ body {
 
 .popup {
     display: none;
-    position: absolute; /* Ensure the popup is positioned absolutely */
-    top: 50%; /* Position it just below the icon or div */
+    position: absolute;
+    /* Ensure the popup is positioned absolutely */
+    top: 50%;
+    /* Position it just below the icon or div */
     transform: translateX(-50%);
     background-color: #555;
     color: white;
@@ -151,7 +170,14 @@ body {
     border-radius: 5px;
     z-index: 1;
     white-space: nowrap;
-    box-shadow: -20px 19px 8px rgba(0, 0, 0, 0.2);/* Add shadow for visual clarity */
+    box-shadow: -20px 19px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow for visual clarity */
+}
+
+@media only screen and (max-width: 716px) {
+    .popup {
+        transform: none;
+    }
 }
 
 .show {
