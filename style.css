@@ -170,7 +170,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     z-index: 1;
-    width: 45vw;
+    white-space: nowrap;
     text-align: center;
     box-shadow: -20px 19px 8px rgba(0, 0, 0, 0.2);
     /* Add shadow for visual clarity */
@@ -179,6 +179,8 @@ body {
 @media only screen and (max-width: 716px) {
     .popup {
         transform: none;
+        width: 45vw;
+        white-space: unset;
     }
 }
 
