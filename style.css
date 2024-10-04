@@ -124,6 +124,7 @@ body {
     transform: scale(1.5);
     transition: transform .3s ease-out;
     border-color: white;
+    z-index: 1;
 }
 
 .link:nth-child(1) a:hover i {
@@ -169,7 +170,8 @@ body {
     padding: 10px;
     border-radius: 5px;
     z-index: 1;
-    white-space: nowrap;
+    width: 45vw;
+    text-align: center;
     box-shadow: -20px 19px 8px rgba(0, 0, 0, 0.2);
     /* Add shadow for visual clarity */
 }
